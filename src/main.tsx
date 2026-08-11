@@ -12,7 +12,170 @@ function Register({ label = 'Inscreva-se', className = 'button' }: { label?: str
 function Header() { const [open, setOpen] = useState(false); return <header className="header"><div className="container header-in"><Link className="brand" to="/" aria-label="Together Run, início"><span>TOGETHER</span><strong>RUN</strong></Link><button className="menu" aria-label={open ? 'Fechar menu' : 'Abrir menu'} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button><nav className={open ? 'nav open' : 'nav'} aria-label="Principal">{nav.map(([to, l]) => <NavLink key={to} to={to} onClick={() => setOpen(false)}>{l}</NavLink>)}<Register /></nav></div></header> }
 function Footer() { return <footer><div className="container foot"><div><div className="brand light"><span>TOGETHER</span><strong>RUN</strong></div><p>Uma corrida solidária realizada pela ADRA.<br />Fortaleza corre por uma causa maior.</p></div><div><b>Navegue</b>{nav.slice(1).map(([to, l]) => <Link key={to} to={to}>{l}</Link>)}</div><div><b>Fale com a organização</b><a href="mailto:regional.ce@adra.org.br"><Mail />regional.ce@adra.org.br</a><a href="https://wa.me/5585999920383"><Phone />(85) 99992-0383</a><a href={LINKS.instagram}><InstagramIcon />@adra.runners</a></div></div><div className="container legal">© 2026 Together Run · ADRA Ceará · CNPJ {EVENT.cnpj}</div></footer> }
 function Layout() { const l = useLocation(); useEffect(() => { window.scrollTo(0, 0); const t: Record<string, string> = { '/': 'Together Run 2026', '/a-corrida': 'A Corrida | Together Run', '/adra': 'Conheça a ADRA | Together Run', '/instituicoes': 'Instituições beneficiadas | Together Run', '/galeria': 'Galeria | Together Run', '/contato': 'Contato | Together Run' }; document.title = t[l.pathname] || 'Together Run 2026' }, [l]); return <><Header /><main><Routes><Route path="/" element={<Home />} /><Route path="/a-corrida" element={<Race />} /><Route path="/adra" element={<Adra />} /><Route path="/instituicoes" element={<Institutions />} /><Route path="/galeria" element={<Gallery />} /><Route path="/contato" element={<Contact />} /><Route path="*" element={<NotFound />} /></Routes></main><a className="mobile-cta" href={LINKS.registration}>Inscreva-se <ArrowRight size={17} /></a><Footer /></> }
-function Hero() { const slides = [{ image: '/images/together4.jpg', eyebrow: '22 NOV 2026 · FORTALEZA/CE', title: 'Corra por você. Transforme por todos.', text: 'Esporte, solidariedade e milhares de pessoas em movimento na Beira-Mar.' }, { image: '/assets/campaign.svg', eyebrow: 'UMA CAUSA MAIOR', title: 'Cada passo também alimenta esperança.', text: 'Entregue seus alimentos na retirada do kit e faça parte dessa rede.' }, { image: '/images/image_together_run.jpeg', eyebrow: 'JUNTOS NA BEIRA-MAR', title: 'Energia coletiva que atravessa a cidade.', text: '3 km e 5 km para celebrar saúde, encontro e impacto social.' }]; const [i, setI] = useState(0); const [pause, setPause] = useState(false); useEffect(() => { if (pause) return; const id = setInterval(() => setI(v => (v + 1) % slides.length), 6000); return () => clearInterval(id) }, [pause, slides.length]); let start = 0; return <section className="hero" tabIndex={0} aria-roledescription="carrossel" onMouseEnter={() => setPause(true)} onMouseLeave={() => setPause(false)} onFocus={() => setPause(true)} onBlur={() => setPause(false)} onKeyDown={e => { if (e.key === 'ArrowRight') setI((i + 1) % 3); if (e.key === 'ArrowLeft') setI((i + 2) % 3) }} onTouchStart={e => start = e.touches[0].clientX} onTouchEnd={e => { const d = e.changedTouches[0].clientX - start; if (Math.abs(d) > 50) setI((i + (d < 0 ? 1 : 2)) % 3) }}>{slides.map((s, n) => <div className={'slide ' + (n === i ? 'active' : '')} key={s.image} aria-hidden={n !== i}><img src={s.image} alt="" fetchPriority={n === 0 ? 'high' : 'auto'} /><div className="hero-shade" /><div className="container hero-copy"><span className="eyebrow">{s.eyebrow}</span><div className="hero-logo">TOGETHER <b>RUN</b></div><h1>{s.title}</h1><p>{s.text}</p><div className="actions"><Register label="Quero me inscrever" /><Link className="button ghost" to="/a-corrida">Conheça a corrida</Link></div></div></div>)}<button className="arrow prev" onClick={() => setI((i + 2) % 3)} aria-label="Slide anterior"><ChevronLeft /></button><button className="arrow next" onClick={() => setI((i + 1) % 3)} aria-label="Próximo slide"><ChevronRight /></button><div className="dots">{slides.map((_, n) => <button key={n} className={n === i ? 'on' : ''} onClick={() => setI(n)} aria-label={`Ir para slide ${n + 1}`} />)}</div></section> }
+function Hero() {
+    const slides = [
+        {
+            image: '/images/banner1.jpg',
+            alt: 'Divulgação da Together Run na Beira-Mar de Fortaleza',
+            eyebrow: '22 NOV 2026 · FORTALEZA/CE',
+            title: 'Corra por você. Transforme por todos.',
+            text: 'Esporte, solidariedade e milhares de pessoas em movimento na Beira-Mar.',
+        },
+        {
+            image: '/assets/campaign.svg',
+            alt: 'Campanha solidária da Together Run',
+            eyebrow: 'UMA CAUSA MAIOR',
+            title: 'Cada passo também alimenta esperança.',
+            text: 'Entregue seus alimentos na retirada do kit e faça parte dessa rede.',
+        },
+        {
+            image: '/images/banner_corredores.jpg',
+            alt: 'Corredores da Together Run na Beira-Mar',
+            eyebrow: 'JUNTOS NA BEIRA-MAR',
+            title: 'Energia coletiva que atravessa a cidade.',
+            text: '3 km e 5 km para celebrar saúde, encontro e impacto social.',
+        },
+        {
+            image: '/images/banner_together_oficial.jpg',
+            alt: 'Corrida Together Nordeste',
+            eyebrow: '6 estados juntos no mesmo dia correndo',
+            title: 'Energia coletiva que atravessa estados.',
+            text: 'Uma única corrida acontecendo de forma simultanea em 6 estados da União Nordeste.',
+        },
+
+    ];
+
+    const [i, setI] = useState(0);
+    const [pause, setPause] = useState(false);
+
+    useEffect(() => {
+        if (pause) {
+            return;
+        }
+
+        const intervalId = window.setInterval(() => {
+            setI((current) => (current + 1) % slides.length);
+        }, 6000);
+
+        return () => {
+            window.clearInterval(intervalId);
+        };
+    }, [pause, slides.length]);
+
+    let touchStart = 0;
+
+    function previousSlide() {
+        setI((current) => (current - 1 + slides.length) % slides.length);
+    }
+
+    function nextSlide() {
+        setI((current) => (current + 1) % slides.length);
+    }
+
+    return (
+        <section
+            className="hero"
+            tabIndex={0}
+            aria-roledescription="carrossel"
+            aria-label="Destaques da Together Run"
+            onMouseEnter={() => setPause(true)}
+            onMouseLeave={() => setPause(false)}
+            onFocus={() => setPause(true)}
+            onBlur={() => setPause(false)}
+            onKeyDown={(event) => {
+                if (event.key === 'ArrowRight') {
+                    nextSlide();
+                }
+
+                if (event.key === 'ArrowLeft') {
+                    previousSlide();
+                }
+            }}
+            onTouchStart={(event) => {
+                touchStart = event.touches[0].clientX;
+            }}
+            onTouchEnd={(event) => {
+                const distance = event.changedTouches[0].clientX - touchStart;
+
+                if (Math.abs(distance) > 50) {
+                    if (distance < 0) {
+                        nextSlide();
+                    } else {
+                        previousSlide();
+                    }
+                }
+            }}
+        >
+            {slides.map((slide, index) => (
+                <div
+                    className={`slide ${index === i ? 'active' : ''}`}
+                    key={slide.image}
+                    aria-hidden={index !== i}
+                >
+                    <img
+                        className="slide-image"
+                        src={slide.image}
+                        alt={slide.alt}
+                        fetchPriority={index === 0 ? 'high' : 'auto'}
+                        loading={index === 0 ? 'eager' : 'lazy'}
+                    />
+
+                    <div className="hero-shade" />
+
+                    <div className="container hero-copy">
+                        <span className="eyebrow">{slide.eyebrow}</span>
+
+                        <div className="hero-logo">
+                            TOGETHER <b>RUN</b>
+                        </div>
+
+                        <h1>{slide.title}</h1>
+                        <p>{slide.text}</p>
+
+                        <div className="actions">
+                            <Register label="Quero me inscrever" />
+
+                            <Link className="button ghost" to="/a-corrida">
+                                Conheça a corrida
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            ))}
+
+            <button
+                type="button"
+                className="arrow prev"
+                onClick={previousSlide}
+                aria-label="Slide anterior"
+            >
+                <ChevronLeft />
+            </button>
+
+            <button
+                type="button"
+                className="arrow next"
+                onClick={nextSlide}
+                aria-label="Próximo slide"
+            >
+                <ChevronRight />
+            </button>
+
+            <div className="dots">
+                {slides.map((slide, index) => (
+                    <button
+                        type="button"
+                        key={slide.image}
+                        className={index === i ? 'on' : ''}
+                        onClick={() => setI(index)}
+                        aria-label={`Ir para slide ${index + 1}`}
+                        aria-current={index === i ? 'true' : undefined}
+                    />
+                ))}
+            </div>
+        </section>
+    );
+}
 function SectionTitle({ kicker, title, text }: { kicker: string, title: string, text?: string }) { return <div className="section-title"><span>{kicker}</span><h2>{title}</h2>{text && <p>{text}</p>}</div> }
 function Facts() { return <div className="facts"><div><CalendarDays /><small>Data</small><b>22 nov. 2026</b></div><div><Clock /><small>Concentração</small><b>5h15</b></div><div><MapPin /><small>Local</small><b>Beira-Mar</b></div><div><RouteIcon /><small>Percursos</small><b>3 km e 5 km</b></div></div> }
 function CTA() { return <section className="cta"><div className="container"><span>22 DE NOVEMBRO · FORTALEZA</span><h2>Seu próximo passo pode transformar muitas histórias.</h2><Register label="Garantir minha inscrição" className="button white" /></div></section> }
