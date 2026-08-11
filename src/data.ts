@@ -5,7 +5,7 @@ export const INSTITUTIONS = [{ name: 'ACOLD', fullName: 'Associação Comunitár
 export const FAQ = [['Como faço minha inscrição?', 'A inscrição é realizada pela plataforma Fortal Pass. Use qualquer botão “Inscreva-se” deste site.'], ['Quais são as distâncias?', 'Os materiais do evento apresentam 3 km para caminhada ou corrida e 5 km para corrida.'], ['Como entrego os alimentos?', 'Leve seus quilos de alimentos no momento da retirada do kit. A quantidade e os itens são 2 kilos de alimentos não perecíveis'], ['Onde e quando acontece?', 'Em 22 de novembro de 2026, domingo, na Beira-Mar de Fortaleza. A concentração começa às 5h15.'], ['O que está incluído para o atleta?', ' Camisa oficial do evento, Medalha de participação, Número de peito, Seguro do atleta, Ecobag oficial, Hidratação durante o evento, Kit fruta (pós-prova). Possíveis brindes dos patrocinadores. Condições finais devem ser consultadas no regulamento oficial.']];
 export const GALLERY = [
   { src: '/images/together1.jpg', alt: 'Campanha oficial da Together Run em Fortaleza', category: 'Campanha' },
-  { src: '/images/together2.jpg', alt: 'Together Run na Beira-Mar', category: 'Campanha' },
+  { src: '/images/together2.jpg', alt: 'Together Run na Beira-Mar', category: 'Corrida' },
   { src: '/images/together3.jpg', alt: 'Corredores da Together Run na Beira-Mar', category: 'Corrida' },
-  { src: '/images/together4.jpg', alt: 'Convite Together Run', category: 'Corrida' },
+  { src: '/images/together4.jpg', alt: 'Convite Together Run', category: 'Campanha' },
 ];
