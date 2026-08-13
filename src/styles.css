@@ -659,6 +659,39 @@ img {
     color: #5b513e
 }
 
+.sucess {
+    margin: 20px 0;
+    padding: 20px 22px;
+    color: #153b52;
+    background: #eef7fc;
+    border: 1px solid #c7e2f2;
+    border-left: 4px solid #2386b8;
+    border-radius: 0 8px 8px 0;
+}
+
+.pending b {
+    color: #0d557a;
+}
+
+.pending ul {
+    margin: 14px 0 0;
+    padding-left: 22px;
+}
+
+.pending li+li {
+    margin-top: 5px;
+}
+
+.pending p {
+    margin: 0;
+}
+
+.pending p+p {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #c7e2f2;
+}
+
 .cols {
     display: grid;
     grid-template-columns: 1fr 1fr;
