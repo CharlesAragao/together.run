@@ -1367,3 +1367,312 @@ footer {
     outline: 3px solid #f4a340;
     outline-offset: 3px
 }
+
+/* Identidade laranja — Together Run */
+:root {
+    --orange: #f85800;
+    --orange-dark: #b83e00;
+    --orange-light: #ffb078;
+
+    --ink: #34231c;
+    --deep: #492416;
+    --soft: #fff5ee;
+    --warm: #f85800;
+    --text: #493b34;
+    --white: #fff;
+    --line: #eddcd0;
+
+    /* Compatibilidade com as referências do CSS atual */
+    --green: var(--orange);
+    --lime: var(--orange-light);
+}
+
+.header {
+    border-bottom-color: var(--line);
+}
+
+.nav>a:not(.button) {
+    color: var(--text);
+}
+
+.nav>a.active:not(.button),
+.nav>a:hover:not(.button) {
+    color: var(--orange-dark);
+}
+
+/* Laranja da arte com texto escuro para melhor contraste */
+.button {
+    background: var(--orange);
+    color: #21150f;
+}
+
+.button:hover {
+    background: var(--orange-dark);
+    color: #fff;
+}
+
+.ghost,
+.outline {
+    color: #fff;
+}
+
+.ghost {
+    background: #ffffff10;
+    border-color: #ffffff88;
+}
+
+.outline {
+    background: transparent;
+    border-color: var(--orange-light);
+}
+
+.white {
+    background: #fff;
+    color: var(--deep);
+}
+
+.hero,
+.slide {
+    background: var(--deep);
+}
+
+.hero-shade {
+    background:
+        linear-gradient(90deg,
+            rgba(38, 20, 12, .93) 0%,
+            rgba(38, 20, 12, .64) 42%,
+            rgba(38, 20, 12, .06) 72%),
+        linear-gradient(0deg,
+            rgba(49, 25, 15, .5),
+            transparent 50%);
+}
+
+/* Destaques em fundos claros */
+.section-title>span,
+.text-link,
+.institution>div>span,
+.timeline b,
+.flow>div>b,
+.training a,
+.faq summary span {
+    color: var(--orange-dark);
+}
+
+/* Destaques em fundos escuros */
+.eyebrow,
+.dark .section-title>span,
+.page-hero span,
+.cta span,
+.hero-logo b,
+.impact svg,
+.impact strong,
+.steps li:before,
+.three svg,
+.brand.light strong {
+    color: var(--orange-light);
+}
+
+.arrow {
+    background: #49241666;
+}
+
+.dots .on {
+    background: var(--orange);
+}
+
+.facts {
+    border-color: var(--line);
+    box-shadow: 0 12px 35px #49241614;
+}
+
+.facts>div {
+    border-right-color: var(--line);
+}
+
+.section.dark {
+    color: #f3e4da;
+}
+
+.impact:after {
+    border-color: #74381e;
+}
+
+.impact small {
+    color: #dfbba5;
+}
+
+.logo-box {
+    background: #fff9f5;
+}
+
+.cta {
+    background: linear-gradient(115deg, #a93600, #702900);
+}
+
+.page-hero:after {
+    border-color: #74381e;
+}
+
+.note,
+.pending {
+    background: var(--soft);
+    border-left-color: var(--orange);
+    color: var(--text);
+}
+
+.pending b {
+    color: var(--orange-dark);
+}
+
+.pending p+p,
+.faq details {
+    border-top-color: var(--line);
+}
+
+.gallery-grid span {
+    background: #492416db;
+}
+
+.lightbox {
+    background: #21150fee;
+}
+
+footer {
+    background: #2d1b13;
+    color: #dfc6b7;
+}
+
+:focus-visible {
+    outline-color: var(--orange);
+}
+
+@media (max-width: 900px) {
+    .nav {
+        box-shadow: 0 14px 25px #4924161c;
+    }
+
+    .hero-shade {
+        background:
+            linear-gradient(90deg,
+                rgba(38, 20, 12, .9),
+                rgba(38, 20, 12, .4)),
+            linear-gradient(0deg,
+                rgba(38, 20, 12, .8),
+                transparent);
+    }
+
+    .mobile-cta {
+        background: var(--orange);
+        color: #21150f;
+        box-shadow: 0 8px 25px #49241670;
+    }
+}
+
+/* Ajuste: laranja + verde profundo */
+:root {
+    --ink: #032e23;
+    --deep: #043d2e;
+    --text: #31443f;
+    --soft: #f3f8f5;
+    --line: #d8e4dc;
+}
+
+.hero,
+.slide {
+    background: var(--deep);
+}
+
+.hero-shade {
+    background:
+        linear-gradient(90deg,
+            rgba(2, 32, 25, .93) 0%,
+            rgba(2, 32, 25, .64) 42%,
+            rgba(2, 32, 25, .06) 72%),
+        linear-gradient(0deg,
+            rgba(3, 46, 35, .5),
+            transparent 50%);
+}
+
+.nav>a:not(.button) {
+    color: var(--text);
+}
+
+.button,
+.mobile-cta {
+    color: #032e23;
+}
+
+.button:hover {
+    color: #fff;
+}
+
+.ghost,
+.outline {
+    color: #fff;
+}
+
+.white {
+    color: var(--deep);
+}
+
+.arrow {
+    background: #043d2e66;
+}
+
+.section.dark {
+    color: #dfece5;
+}
+
+.impact:after,
+.page-hero:after {
+    border-color: #126048;
+}
+
+.impact small {
+    color: #b3cec0;
+}
+
+.logo-box {
+    background: #f6faf7;
+}
+
+.cta {
+    background: linear-gradient(115deg, #07533d, #032e23);
+}
+
+.gallery-grid span {
+    background: #043d2edb;
+}
+
+.lightbox {
+    background: #021b14ee;
+}
+
+footer {
+    background: #022b20;
+    color: #bdd2c7;
+}
+
+.facts {
+    box-shadow: 0 12px 35px #12382d14;
+}
+
+@media (max-width: 900px) {
+    .nav {
+        box-shadow: 0 14px 25px #001c151c;
+    }
+
+    .hero-shade {
+        background:
+            linear-gradient(90deg,
+                rgba(2, 32, 25, .9),
+                rgba(2, 32, 25, .4)),
+            linear-gradient(0deg,
+                rgba(2, 32, 25, .8),
+                transparent);
+    }
+
+    .mobile-cta {
+        box-shadow: 0 8px 25px #042d2270;
+    }
+}

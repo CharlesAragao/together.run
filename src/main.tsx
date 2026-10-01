@@ -16,10 +16,10 @@ function Hero() {
     const slides = [
         {
             image: '/images/banner1.jpg',
-            alt: 'Divulgação da Together Run na Beira-Mar de Fortaleza',
+            alt: 'Divulgação da Together Run em Fortaleza',
             eyebrow: '22 NOV 2026 · FORTALEZA/CE',
             title: 'Corra por você. Transforme por todos.',
-            text: 'Esporte, solidariedade e milhares de pessoas em movimento na Beira-Mar.',
+            text: 'Esporte, solidariedade e milhares de pessoas em movimento.',
         },
         {
             image: '/assets/campaign.svg',
@@ -30,8 +30,8 @@ function Hero() {
         },
         {
             image: '/images/banner_beira_mar.jpg',
-            alt: 'Corredores da Together Run na Beira-Mar',
-            eyebrow: 'JUNTOS NA BEIRA-MAR',
+            alt: 'Corredores da Together Run em Fortaleza',
+            eyebrow: 'JUNTOS POR UMA CAUSA!',
             title: 'Energia coletiva que atravessa a cidade.',
             text: '3 km e 5 km para celebrar saúde, encontro e impacto social.',
         },
@@ -39,8 +39,8 @@ function Hero() {
             image: '/images/banner_together_oficial.jpg',
             alt: 'Corrida Together Nordeste',
             eyebrow: '6 estados juntos no mesmo dia correndo',
-            title: 'Energia coletiva que atravessa estados.',
-            text: 'Uma única corrida acontecendo de forma simultanea em 6 estados da União Nordeste.',
+            title: 'A maior corrida solidária do Nordeste. .',
+            text: '7 Cidades correndo por uma causa!',
         },
         {
             image: '/images/banner_carro.jpg',
@@ -184,10 +184,10 @@ function Hero() {
     );
 }
 function SectionTitle({ kicker, title, text }: { kicker: string, title: string, text?: string }) { return <div className="section-title"><span>{kicker}</span><h2>{title}</h2>{text && <p>{text}</p>}</div> }
-function Facts() { return <div className="facts"><div><CalendarDays /><small>Data</small><b>22 nov. 2026</b></div><div><Clock /><small>Concentração</small><b>5h15</b></div><div><MapPin /><small>Local</small><b>Beira-Mar</b></div><div><RouteIcon /><small>Percursos</small><b>3 km e 5 km</b></div></div> }
+function Facts() { return <div className="facts"><div><CalendarDays /><small>Data</small><b>22 nov. 2026</b></div><div><Clock /><small>Concentração</small><b>5h15</b></div><div><MapPin /><small>Local</small><b>A definir</b></div><div><RouteIcon /><small>Percursos</small><b>3 km e 5 km</b></div></div> }
 function CTA() { return <section className="cta"><div className="container"><span>22 DE NOVEMBRO · FORTALEZA</span><h2>Seu próximo passo pode transformar muitas histórias.</h2><Register label="Garantir minha inscrição" className="button white" /></div></section> }
 function FAQBlock() { return <div className="faq">{FAQ.map(([q, a]) => <details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</div> }
-function Home() { return <><Hero /><section className="quick"><div className="container"><Facts /></div></section><section className="section intro"><div className="container split"><div><SectionTitle kicker="TOGETHER RUN 2026" title="Uma cidade inteira em movimento por solidariedade" /><p className="lead">A ADRA reúne esporte e ação humanitária em uma manhã feita para quem acredita que bem-estar também se constrói coletivamente.</p><p>A corrida promove saúde e qualidade de vida e amplia a visibilidade das ações sociais realizadas pela instituição.</p><Link className="text-link" to="/a-corrida">Conheça todos os detalhes <ArrowRight /></Link></div><div className="impact"><Users /><strong>5 mil+</strong><span>participantes esperados em Fortaleza</span><small>Expectativa informada pela organização</small></div></div></section><section className="section dark"><div className="container split reverse"><div className="photo-stack"><img src="/images/image_together_run_2.jpeg" alt="Corredores com a camisa Together Run na Beira-Mar" loading="lazy" /></div><div><SectionTitle kicker="CORRIDA SOLIDÁRIA" title="Alimento que chega. Cuidado que continua." /><p className="lead">Na retirada dos kits, cada atleta é convidado a levar seus quilos de alimentos.</p><ol className="steps"><li><b>Você leva</b><span>A entrega acontece junto à retirada do kit.</span></li><li><b>A organização reúne</b><span>Detalhes de triagem serão divulgados pela ADRA.</span></li><li><b>A rede acompanha</b><span>A destinação será compartilhada nas redes após a corrida.</span></li></ol><Link className="button outline" to="/instituicoes">Ver instituições</Link></div></div></section><section className="section"><div className="container"><SectionTitle kicker="QUEM FAZ ACONTECER" title="ADRA: presença humanitária em mais de 120 países" text="A agência atua junto às populações mais vulneráveis para melhorar suas condições de vida — e coordena a dimensão social desta corrida." /><div className="adra-strip"><img src="/assets/adra.png" alt="Símbolo da ADRA" loading="lazy" /><div><b>Desenvolvimento · Resposta humanitária · Mobilização</b><p>A Together Run transforma a energia do esporte em um ponto de encontro com a missão da ADRA.</p></div><Link className="text-link" to="/adra">Conheça a ADRA <ArrowRight /></Link></div></div></section><section className="section soft"><div className="container"><SectionTitle kicker="DESTINO DA SOLIDARIEDADE" title="Instituições beneficiadas" /><div className="institution-grid">{INSTITUTIONS.map(x => <InstitutionCard key={x.name} x={x} />)}</div></div></section><section className="section"><div className="container"><div className="title-row"><SectionTitle kicker="REGISTROS" title="Uma energia que já começou" /><Link className="text-link" to="/galeria">Abrir galeria <ArrowRight /></Link></div><div className="preview-gallery">{GALLERY.slice(0, 3).map((x, i) => <img key={x.src} className={`g${i}`} src={x.src} alt={x.alt} loading="lazy" />)}</div></div></section><CTA /></> }
+function Home() { return <><Hero /><section className="quick"><div className="container"><Facts /></div></section><section className="section intro"><div className="container split"><div><SectionTitle kicker="TOGETHER RUN 2026" title="Uma cidade inteira em movimento por solidariedade" /><p className="lead">A ADRA reúne esporte e ação humanitária em uma manhã feita para quem acredita que bem-estar também se constrói coletivamente.</p><p>A corrida promove saúde e qualidade de vida e amplia a visibilidade das ações sociais realizadas pela instituição.</p><Link className="text-link" to="/a-corrida">Conheça todos os detalhes <ArrowRight /></Link></div><div className="impact"><Users /><strong>20 mil+</strong><span>Participantes esperados em todo Nordeste</span><small>Expectativa informada pela organização</small></div></div></section><section className="section dark"><div className="container split reverse"><div className="photo-stack"><img src="/images/image_together_run_2.jpeg" alt="Corredores com a camisa Together Run" loading="lazy" /></div><div><SectionTitle kicker="CORRIDA SOLIDÁRIA" title="Alimento que chega. Cuidado que continua." /><p className="lead">Na retirada dos kits, cada atleta é convidado a levar seus quilos de alimentos.</p><ol className="steps"><li><b>Você leva</b><span>A entrega acontece junto à retirada do kit.</span></li><li><b>A organização reúne</b><span>Detalhes de triagem serão divulgados pela ADRA.</span></li><li><b>A rede acompanha</b><span>A destinação será compartilhada nas redes após a corrida.</span></li></ol><Link className="button outline" to="/instituicoes">Ver instituições</Link></div></div></section><section className="section"><div className="container"><SectionTitle kicker="QUEM FAZ ACONTECER" title="ADRA: presença humanitária em mais de 120 países" text="A agência atua junto às populações mais vulneráveis para melhorar suas condições de vida — e coordena a dimensão social desta corrida." /><div className="adra-strip"><img src="/assets/adra.png" alt="Símbolo da ADRA" loading="lazy" /><div><b>Desenvolvimento · Resposta humanitária · Mobilização</b><p>A Together Run transforma a energia do esporte em um ponto de encontro com a missão da ADRA.</p></div><Link className="text-link" to="/adra">Conheça a ADRA <ArrowRight /></Link></div></div></section><section className="section soft"><div className="container"><SectionTitle kicker="DESTINO DA SOLIDARIEDADE" title="Instituições beneficiadas" /><div className="institution-grid">{INSTITUTIONS.map(x => <InstitutionCard key={x.name} x={x} />)}</div></div></section><section className="section"><div className="container"><div className="title-row"><SectionTitle kicker="REGISTROS" title="Uma energia que já começou" /><Link className="text-link" to="/galeria">Abrir galeria <ArrowRight /></Link></div><div className="preview-gallery">{GALLERY.slice(0, 3).map((x, i) => <img key={x.src} className={`g${i}`} src={x.src} alt={x.alt} loading="lazy" />)}</div></div></section><CTA /></> }
 function PageHero({ kicker, title, text }: { kicker: string, title: string, text: string }) { return <section className="page-hero"><div className="container"><span>{kicker}</span><h1>{title}</h1><p>{text}</p></div></section> }
 function Race() {
     return (
@@ -218,7 +218,7 @@ function Race() {
                         </p>
 
                         <p>
-                            Na Beira-Mar de Fortaleza, cada pessoa participa do seu jeito:
+                            Em Fortaleza, cada pessoa participa do seu jeito:
                             percorrendo 3 km ou 5 km, torcendo, apoiando ou contribuindo com
                             alimentos.
                         </p>
@@ -374,8 +374,8 @@ function Contact() {
                         </a>)}
                     </div>
                 </div>
-                <aside><h2>Como podemos ajudar?</h2>
-                    {[['Atletas', 'Inscrição, programação, kits e participação.'], ['Voluntários', 'Interesse em colaborar com a mobilização.'], ['Patrocinadores', 'Parcerias e apoio ao evento.'], ['Instituições', 'Informações sobre a ação e futuras articulações.']].map(x => <div key={x[0]}><b>{x[0]}</b>
+                <aside><h2>Como posso ajudar?</h2>
+                    {[['Atletas', 'Inscrição, programação, kits e participação.'], ['Voluntários', 'Tem interesse em colaborar com a mobilização? Entre em contato com o organizador.'], ['Patrocinadores', 'Deseja sua marca no evento? Parcerias e apoio ao evento entrar em contato com o organizador.'], ['Instituições', 'Informações sobre a ação e futuras articulações.']].map(x => <div key={x[0]}><b>{x[0]}</b>
                         <p>{x[1]}</p></div>)}
                     <Register label="Fazer minha inscrição" />
                 </aside>
